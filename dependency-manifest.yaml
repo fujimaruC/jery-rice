@@ -1,0 +1,52 @@
+
+
+
+
+
+runtime:
+
+  - hyprland
+  - quickshell
+
+  - qt6-base
+  - qt6-declarative
+  - qt6-svg
+
+  - pipewire
+  - wireplumber
+
+  - brightnessctl
+  - hyprsunset
+  - hyprshot
+
+  - hyprpolkitagent
+
+  - ttf-inter
+  - ttf-jetbrains-mono
+  - ttf-material-symbols-variable
+  - papirus-icon-theme
+
+optional:
+  - networkmanager
+  - hyprpaper
+  - hypridle
+  - hyprlock
+  - hyprpicker
+  - xdg-desktop-portal-hyprland
+
+build:
+
+  - base-devel
+  - git
+
+test:
+  - shellcheck
+  - jq
+  - lua
+  - python-dbusmock
+
+
+
+
+
+

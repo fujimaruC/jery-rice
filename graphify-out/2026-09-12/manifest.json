@@ -1,0 +1,170 @@
+{
+  "config/jeri/jeri.json": {
+    "mtime": 1789150671.4528165,
+    "seen": 1789153973.676805,
+    "ast_hash": "d57afae75c8734ed1e0d91770eb334a1",
+    "semantic_hash": "d57afae75c8734ed1e0d91770eb334a1"
+  },
+  "doctor.sh": {
+    "mtime": 1789150794.5376942,
+    "seen": 1789153973.6768205,
+    "ast_hash": "7877fdd67ec1494948f0f0827ffa518f",
+    "semantic_hash": "7877fdd67ec1494948f0f0827ffa518f"
+  },
+  "dry-run.sh": {
+    "mtime": 1789150795.217687,
+    "seen": 1789153973.6768267,
+    "ast_hash": "ea179f3a390292e9fb8a22fedb81c890",
+    "semantic_hash": "ea179f3a390292e9fb8a22fedb81c890"
+  },
+  "install.sh": {
+    "mtime": 1789151446.2633204,
+    "seen": 1789153973.6768303,
+    "ast_hash": "ed4264d77148f3d8de918ff91e0a364f",
+    "semantic_hash": "ed4264d77148f3d8de918ff91e0a364f"
+  },
+  "installer/lib.sh": {
+    "mtime": 1789151485.511734,
+    "seen": 1789153973.6768336,
+    "ast_hash": "c512895038670fea849e439e5486f253",
+    "semantic_hash": "c512895038670fea849e439e5486f253"
+  },
+  "lua/gen-conf.lua": {
+    "mtime": 1789150684.4487205,
+    "seen": 1789153973.676837,
+    "ast_hash": "9934a23f8d018e6be18eb9efecb4863a",
+    "semantic_hash": "9934a23f8d018e6be18eb9efecb4863a"
+  },
+  "scripts/bench.sh": {
+    "mtime": 1789151634.9524338,
+    "seen": 1789153973.6768405,
+    "ast_hash": "5ae4e1bce2040d45cd54d536e6106806",
+    "semantic_hash": "5ae4e1bce2040d45cd54d536e6106806"
+  },
+  "tests/installer/test_hash_guard.sh": {
+    "mtime": 1789151582.7792468,
+    "seen": 1789153973.6768441,
+    "ast_hash": "5401637f124427591ca897f8443d2c26",
+    "semantic_hash": "5401637f124427591ca897f8443d2c26"
+  },
+  "tests/installer/test_marker_strip.sh": {
+    "mtime": 1789151677.237769,
+    "seen": 1789153973.6768467,
+    "ast_hash": "d9d3e9581eb22c74408f7880b63c75cf",
+    "semantic_hash": "d9d3e9581eb22c74408f7880b63c75cf"
+  },
+  "tests/installer/test_rollback.sh": {
+    "mtime": 1789151584.194225,
+    "seen": 1789153973.6768498,
+    "ast_hash": "e0a687b862edf1ca439a3e902288a41f",
+    "semantic_hash": "e0a687b862edf1ca439a3e902288a41f"
+  },
+  "tests/installer/test_roundtrip.sh": {
+    "mtime": 1789151576.6103425,
+    "seen": 1789153973.676853,
+    "ast_hash": "71cb6c9fa882e9ec52e7f204e28996a5",
+    "semantic_hash": "71cb6c9fa882e9ec52e7f204e28996a5"
+  },
+  "tests/integration-host.sh": {
+    "mtime": 1789151637.8643882,
+    "seen": 1789153973.6768565,
+    "ast_hash": "0ed23fc04c9ce0fe5063dec0424b8a0e",
+    "semantic_hash": "0ed23fc04c9ce0fe5063dec0424b8a0e"
+  },
+  "tests/run.sh": {
+    "mtime": 1789151738.4107988,
+    "seen": 1789153973.6768594,
+    "ast_hash": "3c57bfd129821a3a2e9cd75567e225a7",
+    "semantic_hash": "3c57bfd129821a3a2e9cd75567e225a7"
+  },
+  "tests/unit/gen_conf_golden.sh": {
+    "mtime": 1789151656.523925,
+    "seen": 1789153973.6768622,
+    "ast_hash": "01217c6a376e5f0450160123ab874afa",
+    "semantic_hash": "01217c6a376e5f0450160123ab874afa"
+  },
+  "tests/unit/lua_syntax.sh": {
+    "mtime": 1789151656.5217044,
+    "seen": 1789153973.6768656,
+    "ast_hash": "1710014a689e3178acce31218b8d0e03",
+    "semantic_hash": "1710014a689e3178acce31218b8d0e03"
+  },
+  "tests/unit/manifest_sync.sh": {
+    "mtime": 1789151656.5287104,
+    "seen": 1789153973.6768684,
+    "ast_hash": "744f1ac5056679f7162a7def5de5d09a",
+    "semantic_hash": "744f1ac5056679f7162a7def5de5d09a"
+  },
+  "tests/unit/qmllint.sh": {
+    "mtime": 1789151664.729966,
+    "seen": 1789153973.676871,
+    "ast_hash": "4ede82e90deb39947f69237131c90312",
+    "semantic_hash": "4ede82e90deb39947f69237131c90312"
+  },
+  "tests/unit/shellcheck.sh": {
+    "mtime": 1789151656.527006,
+    "seen": 1789153973.6768737,
+    "ast_hash": "52cb301f73fdaa1074d8ae60d2c93d3c",
+    "semantic_hash": "52cb301f73fdaa1074d8ae60d2c93d3c"
+  },
+  "uninstall.sh": {
+    "mtime": 1789151492.7636247,
+    "seen": 1789153973.6768765,
+    "ast_hash": "ba8935b98597b91500af136a402ddcaa",
+    "semantic_hash": "ba8935b98597b91500af136a402ddcaa"
+  },
+  "01_ARCHITECTURE_ISOLATION.md": {
+    "mtime": 1789135587.7877285,
+    "seen": 1789153973.6768796,
+    "ast_hash": "dffd38d357aa8a583ec529fd87b80993",
+    "semantic_hash": "dffd38d357aa8a583ec529fd87b80993"
+  },
+  "02_UI_DASHBOARD_MEDIA.md": {
+    "mtime": 1789136217.7134604,
+    "seen": 1789153973.6768825,
+    "ast_hash": "62bdc818bf1dcad58f2e2c5b271af971",
+    "semantic_hash": "62bdc818bf1dcad58f2e2c5b271af971"
+  },
+  "03_RELIABILITY_INSTALL_TESTING.md": {
+    "mtime": 1789134663.905725,
+    "seen": 1789153973.6768856,
+    "ast_hash": "8dc5a32ae373fc9bef3fcd5875906aff",
+    "semantic_hash": "8dc5a32ae373fc9bef3fcd5875906aff"
+  },
+  "README.md": {
+    "mtime": 1789152989.533032,
+    "seen": 1789153973.6768894,
+    "ast_hash": "e615bab981c1323b82bebd152f3c945e",
+    "semantic_hash": "e615bab981c1323b82bebd152f3c945e"
+  },
+  "compose.yaml": {
+    "mtime": 1789151598.8019981,
+    "seen": 1789153973.6768925,
+    "ast_hash": "8897de5beb2ccd112c14d7c6a9e9b8dc",
+    "semantic_hash": "8897de5beb2ccd112c14d7c6a9e9b8dc"
+  },
+  "dependency-manifest.yaml": {
+    "mtime": 1789150229.2128494,
+    "seen": 1789153973.6768947,
+    "ast_hash": "42d8fba94b6b769fe032dc5f97591e83",
+    "semantic_hash": "42d8fba94b6b769fe032dc5f97591e83"
+  },
+  "docs/ARCHITECTURE.md": {
+    "mtime": 1789152956.2311225,
+    "seen": 1789153973.6768975,
+    "ast_hash": "0e1810061120321aaabd0bb953707dd9",
+    "semantic_hash": "0e1810061120321aaabd0bb953707dd9"
+  },
+  "docs/INSTALL.md": {
+    "mtime": 1789152972.1830552,
+    "seen": 1789153973.6769006,
+    "ast_hash": "28c83a01cefbd77c324e2a049ea849b5",
+    "semantic_hash": "28c83a01cefbd77c324e2a049ea849b5"
+  },
+  "docs/KNOWN_LIMITATIONS.md": {
+    "mtime": 1789152976.7703173,
+    "seen": 1789153973.6769037,
+    "ast_hash": "5a738f860dca4272be8cd54b2bcd845f",
+    "semantic_hash": "5a738f860dca4272be8cd54b2bcd845f"
+  }
+}

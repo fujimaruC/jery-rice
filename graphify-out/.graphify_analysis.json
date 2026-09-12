@@ -1,0 +1,328 @@
+{
+  "communities": {
+    "0": [
+      "install",
+      "install_sh__entry",
+      "installer_lib",
+      "installer_lib_assert_isolated_dir",
+      "installer_lib_backup_file",
+      "installer_lib_check_disk_space",
+      "installer_lib_check_hash",
+      "installer_lib_die",
+      "installer_lib_err",
+      "installer_lib_hyprland_integrate",
+      "installer_lib_hyprland_unintegrate",
+      "installer_lib_install_packages",
+      "installer_lib_install_tree",
+      "installer_lib_list_missing_runtime",
+      "installer_lib_log",
+      "installer_lib_manifest_add",
+      "installer_lib_manifest_init",
+      "installer_lib_manrel",
+      "installer_lib_mkdir_p",
+      "installer_lib_pkg_available",
+      "installer_lib_pkg_installed",
+      "installer_lib_resolve_dirs",
+      "installer_lib_restore_backup_files",
+      "installer_lib_rollback_pending",
+      "installer_lib_sh__entry",
+      "installer_lib_verify_shell_qml",
+      "installer_lib_warn",
+      "installer_lib_write_session_entry",
+      "installer_lib_write_wrapper",
+      "installer_lib_yaml_pkgs",
+      "uninstall",
+      "uninstall_sh__entry"
+    ],
+    "1": [
+      "01_architecture_isolation_docker_build_env",
+      "02_ui_dashboard_media_media_player",
+      "02_ui_dashboard_media_mpris",
+      "02_ui_dashboard_media_now_playing_capsule",
+      "03_reliability_install_testing_dependency_manifest",
+      "03_reliability_install_testing_docker_env",
+      "03_reliability_install_testing_installer",
+      "03_reliability_install_testing_pacman_rule",
+      "03_reliability_install_testing_test_strategy",
+      "compose_validate",
+      "dependency_manifest",
+      "docs_architecture",
+      "docs_architecture_lifecycle_tools",
+      "docs_install",
+      "docs_install_docker_static",
+      "docs_known_limitations",
+      "docs_known_limitations_docker_testing",
+      "readme",
+      "readme_transactional_installer"
+    ],
+    "2": [
+      "01_architecture_isolation_bootstrap_phase",
+      "02_ui_dashboard_media_ambient_focus_field",
+      "02_ui_dashboard_media_design_tokens",
+      "02_ui_dashboard_media_glass_depth_effect",
+      "02_ui_dashboard_media_light_follows_focus",
+      "02_ui_dashboard_media_morphing_dashboard",
+      "02_ui_dashboard_media_motion_system",
+      "02_ui_dashboard_media_performance_mode",
+      "02_ui_dashboard_media_reduced_motion",
+      "02_ui_dashboard_media_rest_react",
+      "02_ui_dashboard_media_top_bar",
+      "02_ui_dashboard_media_wallpaper_palette",
+      "03_reliability_install_testing_execution_order",
+      "docs_architecture_design_tokens",
+      "docs_architecture_motion_gating",
+      "docs_known_limitations_bootstrap_scope",
+      "readme_motion_singleton"
+    ],
+    "3": [
+      "01_architecture_isolation_caelestia_benchmark",
+      "01_architecture_isolation_fresh_arch_requirement",
+      "01_architecture_isolation_isolation_requirement",
+      "01_architecture_isolation_jeri_desktop",
+      "01_architecture_isolation_performance_requirement",
+      "01_architecture_isolation_xdg_namespace",
+      "02_ui_dashboard_media_performance_page",
+      "03_reliability_install_testing_caelestia_coexistence",
+      "03_reliability_install_testing_logging",
+      "03_reliability_install_testing_performance_targets",
+      "03_reliability_install_testing_recovery",
+      "docs_install_marker_line",
+      "docs_install_rollback_restore",
+      "docs_install_sha256_manifest",
+      "readme_caelestia_safe"
+    ],
+    "4": [
+      "01_architecture_isolation_hyprland",
+      "01_architecture_isolation_quickshell",
+      "01_architecture_isolation_technology_rules",
+      "02_ui_dashboard_media_qml_rule",
+      "02_ui_dashboard_media_shell_architecture",
+      "03_reliability_install_testing_stability_rules",
+      "docs_architecture_event_driven",
+      "docs_architecture_layers",
+      "docs_architecture_single_process",
+      "docs_known_limitations_systemservice_procfs",
+      "readme_single_process_shell"
+    ],
+    "5": [
+      "doctor",
+      "doctor_fail",
+      "doctor_pass",
+      "doctor_sh__entry",
+      "doctor_warn_check",
+      "installer_lib_detect_caelestia",
+      "installer_lib_require_arch_linux",
+      "installer_lib_require_host_arch"
+    ],
+    "6": [
+      "lua_gen_conf",
+      "lua_gen_conf_emit",
+      "lua_gen_conf_render",
+      "lua_gen_conf_run"
+    ],
+    "7": [
+      "tests_run",
+      "tests_run_run_test",
+      "tests_run_sh__entry"
+    ],
+    "8": [
+      "dry_run",
+      "dry_run_sh__entry"
+    ],
+    "9": [
+      "scripts_bench",
+      "scripts_bench_sh__entry"
+    ],
+    "10": [
+      "tests_installer_test_hash_guard",
+      "tests_installer_test_hash_guard_sh__entry"
+    ],
+    "11": [
+      "tests_installer_test_marker_strip",
+      "tests_installer_test_marker_strip_sh__entry"
+    ],
+    "12": [
+      "tests_installer_test_rollback",
+      "tests_installer_test_rollback_sh__entry"
+    ],
+    "13": [
+      "tests_installer_test_roundtrip",
+      "tests_installer_test_roundtrip_sh__entry"
+    ],
+    "14": [
+      "tests_integration_host",
+      "tests_integration_host_sh__entry"
+    ],
+    "15": [
+      "tests_unit_gen_conf_golden",
+      "tests_unit_gen_conf_golden_sh__entry"
+    ],
+    "16": [
+      "tests_unit_lua_syntax",
+      "tests_unit_lua_syntax_sh__entry"
+    ],
+    "17": [
+      "tests_unit_manifest_sync",
+      "tests_unit_manifest_sync_sh__entry"
+    ],
+    "18": [
+      "tests_unit_qmllint",
+      "tests_unit_qmllint_sh__entry"
+    ],
+    "19": [
+      "tests_unit_shellcheck",
+      "tests_unit_shellcheck_sh__entry"
+    ],
+    "20": [
+      "02_ui_dashboard_media_calendar"
+    ],
+    "21": [
+      "02_ui_dashboard_media_control_center"
+    ],
+    "22": [
+      "02_ui_dashboard_media_launcher"
+    ],
+    "23": [
+      "02_ui_dashboard_media_notifications"
+    ]
+  },
+  "cohesion": {
+    "0": 0.16129032258064516,
+    "1": 0.14035087719298245,
+    "2": 0.13970588235294118,
+    "3": 0.17142857142857143,
+    "4": 0.2727272727272727,
+    "5": 0.35714285714285715,
+    "6": 0.8333333333333334,
+    "7": 1.0,
+    "8": 1.0,
+    "9": 1.0,
+    "10": 1.0,
+    "11": 1.0,
+    "12": 1.0,
+    "13": 1.0,
+    "14": 1.0,
+    "15": 1.0,
+    "16": 1.0,
+    "17": 1.0,
+    "18": 1.0,
+    "19": 1.0,
+    "20": 1.0,
+    "21": 1.0,
+    "22": 1.0,
+    "23": 1.0
+  },
+  "gods": [
+    {
+      "id": "install_sh__entry",
+      "label": "install.sh script",
+      "degree": 19
+    },
+    {
+      "id": "installer_lib_die",
+      "label": "die()",
+      "degree": 9
+    },
+    {
+      "id": "installer_lib_mkdir_p",
+      "label": "mkdir_p()",
+      "degree": 9
+    },
+    {
+      "id": "uninstall_sh__entry",
+      "label": "uninstall.sh script",
+      "degree": 9
+    },
+    {
+      "id": "doctor_sh__entry",
+      "label": "doctor.sh script",
+      "degree": 9
+    },
+    {
+      "id": "01_architecture_isolation_quickshell",
+      "label": "Quickshell shell toolkit",
+      "degree": 9
+    },
+    {
+      "id": "01_architecture_isolation_jeri_desktop",
+      "label": "Jeri Desktop",
+      "degree": 8
+    },
+    {
+      "id": "installer_lib_backup_file",
+      "label": "backup_file()",
+      "degree": 7
+    },
+    {
+      "id": "installer_lib_log",
+      "label": "log()",
+      "degree": 7
+    },
+    {
+      "id": "installer_lib_install_tree",
+      "label": "install_tree()",
+      "degree": 6
+    }
+  ],
+  "surprises": [
+    {
+      "source": "dependency-manifest.yaml (official repos)",
+      "target": "Machine-readable dependency manifest (spec)",
+      "source_files": [
+        "dependency-manifest.yaml",
+        "03_RELIABILITY_INSTALL_TESTING.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; semantically similar concepts with no structural link; peripheral node `Machine-readable dependency manifest (spec)` unexpectedly reaches hub `dependency-manifest.yaml (official repos)`"
+    },
+    {
+      "source": "Design tokens (theme/ singletons)",
+      "target": "Jeri Design Tokens",
+      "source_files": [
+        "docs/ARCHITECTURE.md",
+        "02_UI_DASHBOARD_MEDIA.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; semantically similar concepts with no structural link; peripheral node `Design tokens (theme/ singletons)` unexpectedly reaches hub `Jeri Design Tokens`"
+    },
+    {
+      "source": "Caelestia coexistence guarantee",
+      "target": "Non-negotiable isolation requirement",
+      "source_files": [
+        "03_RELIABILITY_INSTALL_TESTING.md",
+        "01_ARCHITECTURE_ISOLATION.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; semantically similar concepts with no structural link"
+    },
+    {
+      "source": "dependency-manifest.yaml (official repos)",
+      "target": "MPRIS media interface",
+      "source_files": [
+        "dependency-manifest.yaml",
+        "02_UI_DASHBOARD_MEDIA.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; peripheral node `MPRIS media interface` unexpectedly reaches hub `dependency-manifest.yaml (official repos)`"
+    },
+    {
+      "source": "Host lifecycle tools (install/uninstall/doctor/dry-run)",
+      "target": "Transactional installer (install/uninstall/doctor/dry-run)",
+      "source_files": [
+        "docs/ARCHITECTURE.md",
+        "03_RELIABILITY_INSTALL_TESTING.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; peripheral node `Host lifecycle tools (install/uninstall/doctor/dry-run)` unexpectedly reaches hub `Transactional installer (install/uninstall/doctor/dry-run)`"
+    }
+  ],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}

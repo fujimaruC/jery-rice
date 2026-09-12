@@ -1,0 +1,24 @@
+# Jeri Desktop - repository ignores
+
+# Generated / stale artifacts
+*.tmp
+*.log
+*.pid
+.DS_Store
+
+# Build/test junk
+__qmlcache__
+.qmlcache/
+.qmlc/
+.cache/
+.qmldeps
+*.user
+
+# Developer-local state
+.idea/
+.vscode/
+*.swp
+*~
+
+# Test sandboxes (installer --root)
+tests/_sandbox/

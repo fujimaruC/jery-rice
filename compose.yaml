@@ -1,0 +1,17 @@
+
+
+
+
+services:
+  validate:
+    build: .
+    working_dir: /work
+    volumes:
+      - .:/work
+    command: ["/bin/sh", "-c", "tests/run.sh && echo 'container validation OK'"]
+    environment:
+      - HOME=/work/.container-home
+      - XDG_CONFIG_HOME=/work/.container-home/.config
+      - XDG_DATA_HOME=/work/.container-home/.local/share
+      - XDG_STATE_HOME=/work/.container-home/.local/state
+      - XDG_CACHE_HOME=/work/.container-home/.cache

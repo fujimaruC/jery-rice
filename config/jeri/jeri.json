@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "meta": {
+    "description": "Jeri Desktop user configuration (defaults reference). Loaded by the shell at runtime; validated by doctor.sh. Fields absent here fall back to internal defaults."
+  },
+  "appearance": {
+    "visualMode": "balanced",
+    "reducedMotion": false,
+    "colorScheme": "dark"
+  },
+  "input": {
+    "mod": "SUPER"
+  },
+  "keybinds": {
+    "dashboard": "MOD, space",
+    "launcher": "MOD, d",
+    "overview": "MOD, TAB",
+    "volumeUp": "MOD, xf86audioraisevolume",
+    "volumeDown": "MOD, xf86audiolowervolume",
+    "volumeMute": "MOD, xf86audiomute"
+  },
+  "bar": {
+    "height": 30,
+    "showMemory": true,
+    "showClock": true
+  },
+  "overview": {
+    "gridCols": 2,
+    "gridRows": 0,
+    "workspaceMap": {}
+  }
+}
