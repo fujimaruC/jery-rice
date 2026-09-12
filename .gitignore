@@ -21,4 +21,6 @@ __qmlcache__
 *~
 
 # Test sandboxes (installer --root)
-tests/_sandbox/
+tests/_sandbox/01_ARCHITECTURE_ISOLATION.md
+02_UI_DASHBOARD_MEDIA.md
+03_RELIABILITY_INSTALL_TESTING.md
