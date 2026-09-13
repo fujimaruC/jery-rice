@@ -5,13 +5,28 @@ Item {
 
 
 
+    // Elevation ramp: each tier is a deliberate, visible step lighter than the
+    // last. In a dark theme, "closer to the user" reads as "lighter" — so
+    // assign tiers by actual stacking order, not by which file happens to
+    // reference them:
+    //   base          L0  app canvas (wallpaper shows through)
+    //   surface       L1  always-on chrome anchored to the canvas (Bar)
+    //   surfaceAlt    L2  content embedded inside a panel (Card, list rows)
+    //   surfaceRaised L3  floating/popover surfaces (ControlCenter, Dashboard,
+    //                     Launcher) — the most elevated thing on screen, so it
+    //                     must read as the lightest surface, not the darkest.
     readonly property color base:          "#0d0e11"
-    readonly property color surface:       "#16181d"
-    readonly property color surfaceAlt:    "#1d2027"
-    readonly property color surfaceRaised: "#1c2027"
+    readonly property color surface:       "#15171c"
+    readonly property color surfaceAlt:    "#1b1e25"
+    readonly property color surfaceRaised: "#23272f"
     readonly property color glass:         "#12141a"
     readonly property color border:        "#262b34"
+
+    // borderFocus: a *hover* cue (mouse only) — one step brighter than the
+    // resting border, still subtle. Keyboard focus uses focusRing below,
+    // which is intentionally much stronger; the two must never look the same.
     readonly property color borderFocus:   "#3d4a63"
+    readonly property color focusRing:     "#7aa2f7"
 
     readonly property color fg:            "#e7e9ee"
     readonly property color fgMuted:       "#9aa1ad"

@@ -55,6 +55,20 @@ Item {
         }
     }
 
+    // This control is keyboard-operable (Keys.onPressed below) but had no
+    // focus indicator at all — a keyboard user couldn't tell it was
+    // selected. Same ring language as JeriCard/JeriButton.
+    Rectangle {
+        anchors.fill: parent
+        anchors.margins: -Metrics.ringGap
+        radius: Metrics.radiusFull
+        color: "transparent"
+        border.color: Colors.focusRing
+        border.width: Metrics.ringWidth
+        opacity: root.activeFocus ? 1 : 0
+        Behavior on opacity { NumberAnimation { duration: Motion.fast; easing.type: Motion.easeOut } }
+    }
+
     MouseArea {
         id: mouseArea
         anchors.fill: parent

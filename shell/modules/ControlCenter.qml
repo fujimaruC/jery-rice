@@ -44,12 +44,17 @@ PanelWindow {
 
     Keys.onEscapePressed: root.setOpen(false)
 
+    // ControlCenter is a floating popover — the highest-elevation surface in
+    // the shell — so it takes the lightest surface tier and the heaviest
+    // shadow, rather than a mid-tier color that made it read as *less*
+    // elevated than a plain embedded card.
     Rectangle {
         id: shadow
         anchors.fill: parent
+        anchors.topMargin: Metrics.shadowOffsetFloat
         radius: Metrics.radiusLg
         color: Colors.base
-        opacity: Effects.shadowOpacity
+        opacity: Effects.shadowOpacityFloat
         visible: root.open
     }
 
@@ -58,7 +63,7 @@ PanelWindow {
         anchors.fill: parent
         radius: Metrics.radiusLg
         opacity: Effects.surfaceOpacity
-        color: Colors.surface
+        color: Colors.surfaceRaised
         border.color: Colors.border
         border.width: Metrics.borderWidth
         Behavior on radius { NumberAnimation { duration: Motion.normal; easing.type: Motion.easeOut } }
@@ -239,8 +244,11 @@ PanelWindow {
             opacity: trow.enabled ? 1 : 0.4
         }
         Row {
+            id: trowContent
             anchors.left: parent.left
+            anchors.right: parent.right
             anchors.leftMargin: Metrics.padSm
+            anchors.rightMargin: Metrics.padSm
             anchors.verticalCenter: parent.verticalCenter
             spacing: Metrics.gapXs
             JeriIcon {
@@ -254,7 +262,11 @@ PanelWindow {
                 font.pixelSize: Typography.sizeXs
                 color: trow.on ? Colors.fg : Colors.fgMuted
                 elide: Text.ElideRight
-                width: 84
+                // Derived from the tile's own width rather than a hardcoded
+                // 84px — previously fixed regardless of uiScale or tile
+                // width, so it would clip or float independently of the
+                // rest of the (fully tokenized) layout.
+                width: trowContent.width - Metrics.iconSm - Metrics.gapXs
             }
         }
         MouseArea {

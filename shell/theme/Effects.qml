@@ -24,6 +24,12 @@ Item {
     readonly property real shadowOpacity: Motion.visualMode === Motion.Full ? 0.35
         : (Motion.visualMode === Motion.Balanced ? 0.22 : 0.0)
 
+    // Floating surfaces (popovers/panels) sit further off the canvas than
+    // embedded cards, so their shadow should be visibly heavier — otherwise
+    // a popover and a card in the same panel read as the same elevation.
+    readonly property real shadowOpacityFloat: Motion.visualMode === Motion.Full ? 0.5
+        : (Motion.visualMode === Motion.Balanced ? 0.34 : 0.0)
+
     readonly property real hairlineOpacity: 0.85
 
 

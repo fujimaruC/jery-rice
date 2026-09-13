@@ -62,6 +62,23 @@ PanelWindow {
     }
 
 
+    // The launcher sits above a full-screen scrim — it's the single most
+    // modal surface in the shell, yet it was on the same L1 tier as the Bar
+    // and had no shadow of its own (only the scrim behind it). Both fixed
+    // to match the elevation language used everywhere else.
+    Rectangle {
+        id: launcherShadow
+        anchors.top: surface.top
+        anchors.left: surface.left
+        anchors.right: surface.right
+        anchors.bottom: surface.bottom
+        anchors.topMargin: Metrics.shadowOffsetFloat
+        radius: surface.radius
+        color: Colors.base
+        opacity: root.open ? Effects.shadowOpacityFloat : 0
+        Behavior on opacity { NumberAnimation { duration: Motion.normal; easing.type: Motion.easeOut } }
+    }
+
     Rectangle {
         id: surface
         anchors.top: parent.top
@@ -69,7 +86,7 @@ PanelWindow {
         anchors.horizontalCenter: parent.horizontalCenter
         width: Math.min(parent.width * 0.55, 560)
         radius: Metrics.radiusMd
-        color: Colors.surface
+        color: Colors.surfaceRaised
         border.color: Colors.border
         border.width: Metrics.borderWidth
         opacity: root.open ? Effects.surfaceOpacity : 0

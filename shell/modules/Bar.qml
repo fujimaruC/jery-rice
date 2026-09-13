@@ -32,7 +32,11 @@ PanelWindow {
 
     Rectangle {
         anchors.fill: parent
-        color: Colors.base
+        // Was Colors.base — identical to the app canvas, so the bar had no
+        // contrast of its own and depended entirely on a 1px top hairline to
+        // read as a distinct layer. surface (L1) gives it a real, if subtle,
+        // presence as the shell's persistent chrome.
+        color: Colors.surface
         opacity: Effects.surfaceOpacity
 
         Rectangle {
@@ -40,6 +44,18 @@ PanelWindow {
             width: parent.width
             height: Metrics.borderWidth
             color: Colors.border
+        }
+
+        // Bottom hairline separates the bar from whatever's beneath it,
+        // matching the edge treatment every other surface in the system
+        // already gets from its own border — the bar previously had this on
+        // only one side.
+        Rectangle {
+            anchors.bottom: parent.bottom
+            width: parent.width
+            height: Metrics.borderWidth
+            color: Colors.border
+            opacity: Effects.hairlineOpacity
         }
 
         RowLayout {

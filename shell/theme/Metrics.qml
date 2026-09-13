@@ -40,6 +40,14 @@ Item {
 
     readonly property int shadowBlur:      Math.round(24 * uiScale)
     readonly property int shadowOffset:    Math.round(2 * uiScale)
+    readonly property int shadowOffsetFloat: Math.round(6 * uiScale)
     readonly property int progressThickness: Math.round(3 * uiScale)
     readonly property int borderWidth: 1
+
+    // Keyboard-focus ring: deliberately thicker than a resting/hover border
+    // so focus is never mistaken for either. Drawn outside the element's own
+    // bounds (see JeriCard/JeriButton/JeriToggle) rather than swapping the
+    // border color, which is how hover already reads.
+    readonly property int ringWidth: 2
+    readonly property int ringGap:   2
 }

@@ -30,25 +30,41 @@ Item {
 
         onClicked: root.clicked()
 
-        background: Rectangle {
-            id: bg
-            radius: Metrics.radiusSm
-            color: root.accent ? Colors.accent : Colors.surfaceAlt
-            border.color: root.hovered ? Colors.borderFocus : Colors.border
-            border.width: Metrics.borderWidth
-
-
+        background: Item {
             Rectangle {
+                id: bg
                 anchors.fill: parent
-                radius: parent.radius
-                color: Colors.hoverOverlay
-                opacity: btn.hovered ? 1 : 0
+                radius: Metrics.radiusSm
+                color: root.accent ? Colors.accent : Colors.surfaceAlt
+                border.color: btn.hovered ? Colors.borderFocus : Colors.border
+                border.width: Metrics.borderWidth
+                Behavior on border.color { ColorAnimation { duration: Motion.fast } }
+
+                Rectangle {
+                    anchors.fill: parent
+                    radius: parent.radius
+                    color: Colors.hoverOverlay
+                    opacity: btn.hovered ? 1 : 0
+                }
+                Rectangle {
+                    anchors.fill: parent
+                    radius: parent.radius
+                    color: Colors.pressOverlay
+                    opacity: btn.down ? 1 : 0
+                }
             }
+
+            // Keyboard-focus ring, same language as JeriCard/JeriToggle:
+            // a distinct outer ring, never conflated with the hover border.
             Rectangle {
                 anchors.fill: parent
-                radius: parent.radius
-                color: Colors.pressOverlay
-                opacity: btn.down ? 1 : 0
+                anchors.margins: -Metrics.ringGap
+                radius: bg.radius + Metrics.ringGap
+                color: "transparent"
+                border.color: Colors.focusRing
+                border.width: Metrics.ringWidth
+                opacity: btn.visualFocus ? 1 : 0
+                Behavior on opacity { NumberAnimation { duration: Motion.fast; easing.type: Motion.easeOut } }
             }
         }
 
@@ -76,10 +92,11 @@ Item {
             }
         }
 
-        transform: Translate {
-
-            y: btn.down ? 1 : 0
-            Behavior on y { NumberAnimation { duration: Motion.snappy; easing.type: Motion.easeSnap } }
-        }
+        // Scale-down replaces the old 1px vertical nudge: at this control
+        // size a translate that small is imperceptible, while a uniform
+        // scale reads clearly as "pressed" without needing extra pixels.
+        scale: btn.down ? Motion.pressScale : 1.0
+        transformOrigin: Item.Center
+        Behavior on scale { NumberAnimation { duration: Motion.snappy; easing.type: Motion.easeSnap } }
     }
 }

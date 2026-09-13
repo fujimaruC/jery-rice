@@ -43,12 +43,16 @@ PanelWindow {
 
     Keys.onEscapePressed: root.setOpen(false)
 
+    // Same floating-popover tier as ControlCenter — was left on the L1
+    // "surface" token, which made two popovers in the same shell disagree
+    // about which elevation tier a popover actually is.
     Rectangle {
         id: shadow
         anchors.fill: parent
+        anchors.topMargin: Metrics.shadowOffsetFloat
         radius: Metrics.radiusLg
         color: Colors.base
-        opacity: Effects.shadowOpacity
+        opacity: Effects.shadowOpacityFloat
         visible: root.open
     }
 
@@ -57,7 +61,7 @@ PanelWindow {
         anchors.fill: parent
         opacity: Effects.surfaceOpacity
         radius: Metrics.radiusLg
-        color: Colors.surface
+        color: Colors.surfaceRaised
         border.color: Colors.border
         border.width: Metrics.borderWidth
         Behavior on radius { NumberAnimation { duration: Motion.normal; easing.type: Motion.easeOut } }

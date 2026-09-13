@@ -40,4 +40,9 @@ Item {
 
 
     readonly property bool motionAllowed: !reducedMotion && visualMode !== Motion.Lite
+
+    // Press feedback: a 1px translate reads as nothing at UI scale. A small
+    // uniform scale-down is the legible "physically pushed" cue and costs
+    // nothing extra to animate. Collapses to 1.0 (no-op) under reduced motion.
+    readonly property real pressScale: reducedMotion ? 1.0 : 0.97
 }
