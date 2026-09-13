@@ -9,6 +9,10 @@ Item {
 
     default property alias content: contentItem.data
     property color surface: Colors.surfaceAlt
+    // Embedded elements are separated by spacing/hairlines now (see
+    // docs/DESIGN_SYSTEM.md §2) — a border here specifically means "this is
+    // a floating surface," so it's opt-in via `floating`, not a default.
+    property bool floating: false
     property color borderColor: Colors.border
     property int radius: Metrics.radiusMd
     property bool interactive: true
@@ -54,16 +58,18 @@ Item {
         color: root.surface
         // Hover = subtle border brighten (mouse-only, low-key). Focus gets
         // its own ring below instead of reusing this border, so the two
-        // states are never visually interchangeable.
+        // states are never visually interchangeable. Embedded (non-floating)
+        // cards show no resting border at all — only on hover/floating.
         border.color: root.hovered ? Colors.borderFocus : root.borderColor
-        border.width: Metrics.borderWidth
+        border.width: (root.floating || root.hovered) ? Metrics.borderWidth : 0
         Behavior on border.color { ColorAnimation { duration: Motion.fast } }
 
-        // Hover wash: a soft accent tint, mouse-only.
+        // Hover wash: a neutral tint for embedded cards (hover isn't a state
+        // signal, so it never borrows the accent-tinted `accentSoft`).
         Rectangle {
             anchors.fill: parent
             radius: root.radius
-            color: Colors.accentSoft
+            color: root.floating ? Colors.accentSoft : Colors.hoverTint
             opacity: root.hovered ? Effects.focusOpacity : 0
             Behavior on opacity { NumberAnimation { duration: Motion.fast; easing.type: Motion.easeOut } }
         }

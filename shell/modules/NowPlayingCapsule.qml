@@ -50,8 +50,6 @@ Item {
         radius: Metrics.radiusSm
         color: Colors.surfaceAlt
         opacity: Effects.surfaceOpacity
-        border.color: Colors.border
-        border.width: Metrics.borderWidth
     }
 
     RowLayout {

@@ -50,8 +50,6 @@ Item {
             anchors.fill: parent
             radius: Metrics.radiusFull
             color: Colors.surfaceAlt
-            border.color: Colors.border
-            border.width: 1
         }
 
         Rectangle {
@@ -76,10 +74,10 @@ Item {
         height: width
         radius: Metrics.radiusFull
         color: Colors.fg
-        border.color: Colors.border
-        border.width: 1
         x: track.x + track.width * root._frac - knob.width / 2
         y: (root.height - knob.height) / 2
+        scale: dragArea.pressed ? Motion.pressScale : 1.0
+        Behavior on scale { NumberAnimation { duration: Motion.snappy; easing.type: Motion.easeSnap } }
 
         Behavior on x {
             NumberAnimation {
@@ -115,6 +113,22 @@ Item {
             font.pixelSize: Typography.sizeXs
             color: Colors.fg
         }
+    }
+
+    // JeriSlider handles Keys.onPressed for arrow-key adjustment but had no
+    // focus visual at all — same gap fixed on JeriToggle/ToggleRow.
+    Rectangle {
+        anchors.left: track.left
+        anchors.right: track.right
+        anchors.verticalCenter: track.verticalCenter
+        anchors.margins: -Metrics.ringGap
+        height: track.height + 2 * Metrics.ringGap
+        radius: Metrics.radiusFull
+        color: "transparent"
+        border.color: Colors.focusRing
+        border.width: Metrics.ringWidth
+        opacity: root.activeFocus ? 1 : 0
+        Behavior on opacity { NumberAnimation { duration: Motion.fast; easing.type: Motion.easeOut } }
     }
 
     MouseArea {

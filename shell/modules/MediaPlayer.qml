@@ -37,8 +37,6 @@ Item {
             Layout.preferredHeight: Metrics.iconMd * 5
             radius: Metrics.radiusMd
             color: Colors.surfaceRaised
-            border.color: Colors.border
-            border.width: Metrics.borderWidth
             layer.enabled: true
 
             Image {

@@ -10,7 +10,10 @@ Item {
 
     default property alias content: contentItem.data
 
-    property color surface: Colors.surface
+    // JeriPanel is the floating-surface preset — Dashboard/ControlCenter-style
+    // containers use this shape (border + shadow + top accent line) rather
+    // than JeriCard, which is for embedded, borderless content.
+    property color surface: Colors.surfaceRaised
     property real surfaceOpacity: Effects.surfaceOpacity
     property color borderColor: Colors.border
     property int radius: Metrics.radiusMd

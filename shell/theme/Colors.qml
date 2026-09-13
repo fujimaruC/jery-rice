@@ -40,6 +40,17 @@ Item {
 
     readonly property color hoverOverlay:  "#14ffffff"
     readonly property color pressOverlay:  "#26ffffff"
+    // Neutral hover tint for embedded rows/items that aren't "active" —
+    // previously many of these leaned on accentSoft or borderFocus for
+    // hover, which quietly turned hover into a weaker version of the
+    // active/selected signal. Keeping them visually distinct: hover is
+    // always neutral, accent is reserved for real state.
+    readonly property color hoverTint:     "#0dffffff"
+
+    // Hairline divider for separating embedded rows without boxing them —
+    // the replacement for reaching for `border` (a box edge) when what was
+    // actually needed was a line between two things in a list.
+    readonly property color line:          "#1c2029"
 
     readonly property color ok:            "#9ece6a"
     readonly property color warn:          "#e0a458"

@@ -71,62 +71,69 @@ PanelWindow {
         Column {
             id: col
             anchors.fill: parent
-            anchors.margins: Metrics.padMd
-            spacing: Metrics.gapMd
+            anchors.margins: Metrics.padLg
+            spacing: Metrics.gapLg
 
-
-            Row {
+            Column {
                 width: parent.width
-                spacing: Metrics.gapSm
-                JeriIcon { glyph: "brightness_high"; size: Metrics.iconSm; color: Colors.fg }
-                JeriSlider {
-                    width: parent.width - Metrics.iconSm - Metrics.gapSm
-                    from: 10; to: 100; stepSize: 5
-                    value: root.brightness
-                    onValueChanged: root.setBrightnessLevel(value)
+                spacing: Metrics.gapMd
+
+                Row {
+                    width: parent.width
+                    spacing: Metrics.gapSm
+                    JeriIcon { glyph: "brightness_high"; size: Metrics.iconSm; color: Colors.fg }
+                    JeriSlider {
+                        width: parent.width - Metrics.iconSm - Metrics.gapSm
+                        from: 10; to: 100; stepSize: 5
+                        value: root.brightness
+                        onValueChanged: root.setBrightnessLevel(value)
+                    }
+                }
+
+                Row {
+                    width: parent.width
+                    spacing: Metrics.gapSm
+                    JeriIcon {
+                        glyph: AudioService.muted ? "volume_off" : "volume_up"
+                        size: Metrics.iconSm
+                        color: AudioService.muted ? Colors.fgFaint : Colors.fg
+                    }
+                    JeriSlider {
+                        width: parent.width - Metrics.iconSm - Metrics.gapSm
+                        from: 0; to: 1; stepSize: 0.01
+                        value: AudioService.volume
+                        unit: ""
+                        onValueChanged: AudioService.setVolume(value)
+                    }
+                }
+
+                Row {
+                    width: parent.width
+                    spacing: Metrics.gapSm
+                    JeriIcon {
+                        glyph: AudioService.micMuted ? "mic_off" : "mic"
+                        size: Metrics.iconSm
+                        color: AudioService.micMuted ? Colors.fgFaint : Colors.fg
+                    }
+                    JeriToggle {
+                        checked: !AudioService.micMuted
+                        onToggled: AudioService.setMicMuted(!value)
+                        anchors.verticalCenter: parent.verticalCenter
+                    }
+                    Text {
+                        text: AudioService.micMuted ? "Microphone off" : "Microphone live"
+                        font.family: Typography.family
+                        font.pixelSize: Typography.sizeSm
+                        color: AudioService.micMuted ? Colors.fgFaint : Colors.fgMuted
+                        anchors.verticalCenter: parent.verticalCenter
+                    }
                 }
             }
 
-
-            Row {
-                width: parent.width
-                spacing: Metrics.gapSm
-                JeriIcon {
-                    glyph: AudioService.muted ? "volume_off" : "volume_up"
-                    size: Metrics.iconSm
-                    color: AudioService.muted ? Colors.fgFaint : Colors.fg
-                }
-                JeriSlider {
-                    width: parent.width - Metrics.iconSm - Metrics.gapSm
-                    from: 0; to: 1; stepSize: 0.01
-                    value: AudioService.volume
-                    unit: ""
-                    onValueChanged: AudioService.setVolume(value)
-                }
-            }
-
-            Row {
-                width: parent.width
-                spacing: Metrics.gapSm
-                JeriIcon {
-                    glyph: AudioService.micMuted ? "mic_off" : "mic"
-                    size: Metrics.iconSm
-                    color: AudioService.micMuted ? Colors.fgFaint : Colors.fg
-                }
-                JeriToggle {
-                    checked: !AudioService.micMuted
-                    onToggled: AudioService.setMicMuted(!value)
-                    anchors.verticalCenter: parent.verticalCenter
-                }
-                Text {
-                    text: AudioService.micMuted ? "Microphone off" : "Microphone live"
-                    font.family: Typography.family
-                    font.pixelSize: Typography.sizeSm
-                    color: AudioService.micMuted ? Colors.fgFaint : Colors.fgMuted
-                    anchors.verticalCenter: parent.verticalCenter
-                }
-            }
-
+            // Hairline instead of a box around the quick-toggle grid below —
+            // this is a section break within one floating surface, not a
+            // reason for another nested card.
+            Rectangle { width: parent.width; height: 1; color: Colors.line }
 
             Grid {
                 columns: 2
@@ -153,6 +160,7 @@ PanelWindow {
                 }
             }
 
+            Rectangle { width: parent.width; height: 1; color: Colors.line }
 
             Text {
                 width: parent.width
@@ -230,19 +238,37 @@ PanelWindow {
         property string icon: ""
         property bool on: false
         property bool enabled: true
+        property bool hovered: trowArea.containsMouse
         signal clicked()
 
         width: (parent.width - parent.spacing) / 2
-        height: 30
+        height: Metrics.touchTarget
+        opacity: trow.enabled ? 1 : 0.4
 
+        activeFocusOnTab: trow.enabled
+
+        // Borderless: "on" is communicated by a soft accent fill plus the
+        // accent icon/text takeover below — not by a box outline, which
+        // was making every one of these six tiles the loudest thing in the
+        // panel regardless of whether it was actually on.
         Rectangle {
             anchors.fill: parent
             radius: Metrics.radiusSm
-            color: trow.on ? Colors.accentSoft : Colors.surfaceAlt
-            border.color: trow.on ? Colors.borderFocus : Colors.border
-            border.width: Metrics.borderWidth
-            opacity: trow.enabled ? 1 : 0.4
+            color: trow.on ? Colors.accentSoft : (trow.hovered ? Colors.hoverTint : "transparent")
+            Behavior on color { ColorAnimation { duration: Motion.fast } }
         }
+
+        Rectangle {
+            anchors.fill: parent
+            anchors.margins: -Metrics.ringGap
+            radius: Metrics.radiusSm + Metrics.ringGap
+            color: "transparent"
+            border.color: Colors.focusRing
+            border.width: Metrics.ringWidth
+            opacity: trow.activeFocus ? 1 : 0
+            Behavior on opacity { NumberAnimation { duration: Motion.fast; easing.type: Motion.easeOut } }
+        }
+
         Row {
             id: trowContent
             anchors.left: parent.left
@@ -270,10 +296,23 @@ PanelWindow {
             }
         }
         MouseArea {
+            id: trowArea
             anchors.fill: parent
             enabled: trow.enabled
+            hoverEnabled: trow.enabled
             cursorShape: Qt.PointingHandCursor
+            onPressed: trow.forceActiveFocus()
             onClicked: trow.clicked()
+        }
+
+        // These tiles are otherwise mouse-only despite sitting in a
+        // keyboard-navigable grid — same gap JeriToggle had before its
+        // focus ring was added.
+        Keys.onPressed: function(event) {
+            if (trow.enabled && (event.key === Qt.Key_Return || event.key === Qt.Key_Space)) {
+                trow.clicked()
+                event.accepted = true
+            }
         }
     }
 }
