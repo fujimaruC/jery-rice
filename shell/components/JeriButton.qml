@@ -10,7 +10,7 @@ Item {
     property string text: ""
     property string glyph: ""
     property color color: Colors.fg
-    property color accent: false
+    property bool accent: false
     property bool focusable: true
 
     property bool pressed: btn.down
